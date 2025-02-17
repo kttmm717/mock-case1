@@ -1,0 +1,24 @@
+<?php
+
+namespace App\Models;
+
+use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Model;
+
+class Comment extends Model
+{
+    use HasFactory;
+
+    protected $fillable = [
+        'user_id',
+        'item_id',
+        'comment'
+    ];
+
+    public function items() {
+        $this->belongsTo(Item::class);
+    }
+    public function users() {
+        $this->belongsTo(User::class);
+    }
+}
