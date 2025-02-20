@@ -23,3 +23,8 @@ p {
     color: rgb(2, 166, 216);
     cursor: pointer;
 }
+.message__text {
+    background-color: rgb(161, 204, 161);
+    color: green;
+    padding: 15px;
+}

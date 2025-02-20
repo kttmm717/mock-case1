@@ -17,10 +17,10 @@ class Like extends Model
         'user_id',
         'item_id'
     ];
-    public function items() {
+    public function item() {
         return $this->belongsTo(Item::class);
     }
-    public function users() {
+    public function user() {
         return $this->belongsTo(User::class);
     }
 }

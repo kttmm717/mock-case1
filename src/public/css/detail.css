@@ -1,0 +1,126 @@
+.container {
+    max-width: 1540px;
+    margin: 50px auto;
+    display: flex;
+    justify-content: space-around;
+}
+.item__img {
+    width: 400px;
+    height: 400px;
+}
+.information {
+    width: 45%;
+}
+.item__name {
+    font-size: 40px;
+    font-weight: bold;
+    padding-bottom: 10px;
+}
+.item__price {
+    font-size: 30px;
+    padding-bottom: 20px;
+}
+.icons {
+    display: flex;
+    padding-bottom: 20px;
+}
+.icon {
+    padding-left: 30px;
+    font-size: 24px;
+    text-align: center;
+}
+.fas {
+    color: gold;
+}
+.far {
+    color: gray;
+}
+.btn {
+    display: block;
+    color: white;
+    background-color: rgb(240, 114, 94);
+    text-align: center;
+    border-radius: 3px;
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+}
+.disable {
+    background-color: #7e7e7e;
+}
+.section__title {
+    font-weight: bold;
+    font-size: 26px;
+    padding-bottom: 20px;
+}
+.item__description {
+    padding-bottom: 20px;
+}
+.comment__title {
+    font-weight: bold;
+    font-size: 24px;
+    color: #7e7e7e;
+}
+.user__img {
+    width: 50px;
+    height: 50px;
+    background-color: #eee;
+    border-radius: 50%;
+}
+.user {
+    display: flex;
+    align-items: center;
+}
+textarea {
+    width: 100%;
+    border: 1px solid #8d8c8c;
+    height: 160px;
+    resize: none;
+    margin-bottom: 20px;
+    padding: 10px;
+    border-radius: 3px;
+}
+.category {
+    border-radius: 20px;
+    background-color: #eee;
+    padding: 0 10px;
+}
+.table__header {
+    padding-right: 20px;
+}
+.table__row {
+    display: block;
+    padding: 10px;
+}
+.table{
+    padding-bottom: 20px;
+    display: block;
+}
+.comment__title {
+    padding-bottom: 20px;
+}
+.comment__content {
+    background-color: #eee;
+    padding: 10px;
+    border-radius: 3px;
+    margin-bottom: 20px;
+}
+.user {
+    padding-bottom: 15px;
+}
+.comment p {
+    font-weight: bold;
+    font-size: 20px
+}
+.user__name {
+    padding-left: 20px;
+}
+span {
+    font-size: 20px;
+}
+.count {
+    font-size: 15px;
+}
+.error {
+    color: red;
+}

@@ -9,19 +9,21 @@ class CategoryItem extends Model
 {
     use HasFactory;
 
+    protected $table = 'category_items';
+
     protected $primaryKey = ['item_id', 'user_id'];
 
     public $incrementing = false;
 
     protected $fillable = [
         'item_id',
-        'caategory_id'
+        'category_id'
     ];
 
-    public function categories() {
+    public function category() {
         return $this->belongsTo(Category::class);
     }
-    public function items() {
+    public function item() {
         return $this->belongsTo(Item::class);
     }
 }

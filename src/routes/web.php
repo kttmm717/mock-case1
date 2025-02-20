@@ -3,6 +3,10 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\RegisteredUserController;
 use App\Http\Requests\EmailVerificationRequest;
+use App\Http\Controllers\ItemController;
+use App\Http\Controllers\LikeController;
+use App\Http\Controllers\CommentController;
+use App\Http\Controllers\UserController;
 
 /*
 |--------------------------------------------------------------------------
@@ -22,7 +26,6 @@ Route::get('/email/verify', function() {
 });
 Route::post('/email/verify', function() { //認証メール再送ボタン押された時のルート
     session()->get('unauthentication_user')->sendEmailVerificationNotification();
-    session()->put('resent', true);
     return back()->with('message', '認証メールを送りました');
 });
 
@@ -31,4 +34,19 @@ Route::get('/email/verify/{id}/{hash}', function(EmailVerificationRequest $reque
     $request->fulfill();
     session()->forget('unauthentication_user');
     return redirect('/mypage/profile');
+})->name('verification.verify');
+
+
+Route::get('/', [ItemController::class, 'index'])->name('items');
+Route::get('/item/{item_id}', [ItemController::class, 'detail']);
+
+Route::middleware('auth')->group(function() {
+    Route::get('/mypage', [UserController::class, 'mypage']);
+    Route::get('/mypage/profile', [UserController::class,'profileView']);
+    Route::post('/mypage/profile',[UserController::class, 'profileCreate']);
+    Route::post('/delete-like/{item_id}', [LikeController::class, 'delete']);
+    Route::post('/create-like/{item_id}', [LikeController::class, 'create']);
+    Route::post('/comment/{item_id}', [CommentController::class, 'create']);
+    Route::get('/sell', [ItemController::class, 'sellView']);
+    Route::post('/sell', [ItemController::class, 'sellCreate']);
 });

@@ -1,6 +1,8 @@
 <header class="header">
     <div class="header__container">
-        <img src="{{asset('img/coachtech-logo.svg')}}" alt="">
+        <a href="/">
+            <img src="{{asset('img/coachtech-logo.svg')}}" alt="">
+        </a>
         @if(!in_array(Route::currentRouteName(), ['register', 'login', 'verification.notice']))
         <form class="search-form" action="">
             @csrf
@@ -13,10 +15,10 @@
                 @if(Auth::check())
                     <form action="/logout" method="post">
                         @csrf
-                        <li>ログアウト</li>
+                        <li><button>ログアウト</button></li>
                     </form>
                     <li><a href="/mypage">マイページ</a></li>
-                    <li><a href="/sell">出品</a></li>
+                    <li><a href="/sell" class="sell__btn">出品</a></li>
                 @else
                     <li><a href="/login">ログイン</a></li>
                     <li><a href="/register">会員登録</a></li>

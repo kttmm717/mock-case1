@@ -11,7 +11,7 @@ class RegisteredUserController extends Controller
     public function store(Request $request, CreateNewUser $creator) {
         event(new Registered($user = $creator->create($request->all())));
 
-        session()->put('unauthentication_user', $user);
+        session()->put('unauthenticated_user', $user);
 
         return redirect('/email/verify');
     }
