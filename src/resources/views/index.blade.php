@@ -19,9 +19,17 @@
         @foreach($items as $item)
         <div class="item">
             <a href="/item/{{$item->id}}">
-                <img class="item__img" src="{{ \Storage::url($item->img_url) }}" alt="商品画像">
-                <p>{{$item->name}}</p>
+                @if($item->sold())
+                <div class="item__img sold">
+                    <img src="{{ \Storage::url($item->img_url) }}" alt="商品画像">
+                </div>
+                @else
+                <div class="item__img">
+                    <img class="item__img" src="{{ \Storage::url($item->img_url) }}" alt="商品画像">
+                </div>  
+                @endif
             </a>
+            <p>{{$item->name}}</p>
         </div>
         @endforeach
     </div>

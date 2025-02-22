@@ -7,6 +7,7 @@ use App\Http\Controllers\ItemController;
 use App\Http\Controllers\LikeController;
 use App\Http\Controllers\CommentController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\PurchaseController;
 
 /*
 |--------------------------------------------------------------------------
@@ -49,4 +50,7 @@ Route::middleware('auth')->group(function() {
     Route::post('/comment/{item_id}', [CommentController::class, 'create']);
     Route::get('/sell', [ItemController::class, 'sellView']);
     Route::post('/sell', [ItemController::class, 'sellCreate']);
+    Route::get('/purchase/{item_id}', [PurchaseController::class, 'index']);
+    Route::post('/purchase/{item_id}', [PurchaseController::class, 'purchase']);
+    Route::get('/purchase/{item_id}/success', [PurchaseController::class, 'success']);
 });

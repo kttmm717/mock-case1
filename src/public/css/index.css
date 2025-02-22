@@ -18,7 +18,7 @@
     font-weight: bold;
     font-size: 30px;
 }
-.item__img {
+.item__img img{
     width: 200px;
     height: 200px;
 }
@@ -26,11 +26,34 @@
     display: flex;
     flex-wrap: wrap;
     width: 100%;
-    margin: 0 auto;
+    margin: 0 auto;   
 }
 .item {
-    width: 20%;
     box-sizing: border-box;
-    padding: 10px;
     text-align: center;
+    width: 200px;
+    height: 200px;
+    margin: 10px;
+}
+.sold {
+    position: relative;   
+}
+.sold::before {
+    position: absolute;
+    content: '';
+    top: 0;
+    left: 0;
+    border-top: 4em solid #c12748;
+    border-right: 4em solid transparent;
+    z-index: 100;
+}
+.sold::after {
+    position: absolute;
+    content: "Sold";
+    top: 1em;
+    left: 0.2em;
+    display: block;
+    color: white;
+    z-index: 101;
+    transform: rotate(-45deg);
 }
